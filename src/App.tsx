@@ -9,7 +9,7 @@ import ChessEngine from "./pages/projects/pages/chess-engine";
 import OpticalCharacterRecognition from "./pages/projects/pages/optical-character-recognition";
 import Interactive3DEngine from "./pages/projects/pages/interactive-3d-engine";
 import AILearnsToDrive from "./pages/projects/pages/ai-learns-to-drive";
-import Work from "./pages/work/work";
+import Work from "./pages/hero/widget-components/work/work";
 import MyHeader from "./components/custom/my-header";
 import { BreadcrumbProvider } from "./hooks/use-breadcrumbs";
 

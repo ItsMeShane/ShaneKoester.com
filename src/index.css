@@ -87,7 +87,7 @@
     @apply text-foreground;
   }
   main {
-    @apply p-6 h-full;
+    @apply p-6 w-full h-full overflow-x-hidden;
   }
 }
 

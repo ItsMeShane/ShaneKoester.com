@@ -2,9 +2,6 @@
 
 import { Timeline, TimelineItem } from "./timeline";
 import { Briefcase, Code, GraduationCap, LucideIcon } from "lucide-react";
-import { useBreadcrumbs } from "@/hooks/use-breadcrumbs";
-import { useEffect } from "react";
-
 
 interface TimelineEntry {
   startDate: string;
@@ -54,27 +51,10 @@ const timelineData: TimelineEntry[] = [
   },
 ];
 
-export default function Work() {
-  // set page breadcrumbs
-  const { updateBreadcrumbs } = useBreadcrumbs()
-  useEffect(() => {
-    updateBreadcrumbs([
-      { label: "Work" },
-    ])
-    return () => {
-      updateBreadcrumbs([])
-    }
-  }, [])
-
+export default function WorkWidget() {
   return (
-    <main className="flex flex-col gap-12 items-center">
-      <section className="text-center mb-12">
+    <div className="h-full p-6 flex flex-col gap-12 items-center overflow-x-hidden overflow-y-auto">
         <h1 className="text-4xl md:text-5xl font-bold mb-6">My Professional Journey</h1>
-        <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
-          A visualization of my work experience and education
-        </p>
-      </section>
-      <section>
         <Timeline>
           {timelineData.map((item, index) => (
             <TimelineItem
@@ -93,15 +73,6 @@ export default function Work() {
             </TimelineItem>
           ))}
         </Timeline>
-      </section>
-
-    </main>
+    </div>
   );
 }
-
-
-
-
-
-
-

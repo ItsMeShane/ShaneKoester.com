@@ -2,7 +2,7 @@
 
 import type { ReactNode } from "react"
 import { useEffect, useRef, useState } from "react"
-import type { LucideIcon } from "lucide-react"
+import { ArrowDown, ChevronDown, type LucideIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 import UnderlineAnimation from "@/components/custom/hover-animations"
 import { Link } from "react-router-dom"
@@ -14,7 +14,8 @@ interface TimelineProps {
 function Timeline({ children }: TimelineProps) {
   return (
     <div className="relative w-full max-w-5xl mx-auto">
-      <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-border" />
+      <div className="absolute left-1/2 transform w-1 -translate-x-1/2 h-[99.5%] bg-border" />
+      <div className="sticky left-1/2 top-[99.6%] transform -translate-x-1/2  w-1"><ArrowDown color="#303032" className="w-8 h-8 -ml-3.5 " /></div>
       <div className="space-y-12">{children}</div>
     </div>
   )
@@ -103,7 +104,8 @@ function TimelineItem({
         className={cn(
           "flex flex-col items-center justify-center z-10 mt-4 lg:mt-0 m-0 p-0",
           isVisible ? "opacity-100" : "opacity-0",
-          "transition-opacity duration-500 delay-200"
+          "transition-opacity duration-500 delay-200",
+          position === 'right' ? 'ml-1.5' : 'mr-1.5'
         )}
       >
         <div className={cn("w-10 h-10 rounded-full flex items-center justify-center", iconColor)}>
